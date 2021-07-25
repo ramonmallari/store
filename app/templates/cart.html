@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Shopping Cart</title>
+</head>
+<body>
+    
+    <div class = "container">
+        <div class = "top">
+            <h1>Cart</h1>
+        </div>
+        <div class = "panel_two">
+            <p><a href = /logout>Log Out</a></p>
+        </div>
+        <div class = "cart">
+            <table>
+                <tr>
+                    <th>Image</th>
+                    <th>Item</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+                {% for item in items %}
+                <tr>
+                    <td>-Image goes here-</td>
+                    <td>{{item.item.item}}</td>
+                    <td>{{item.item.description}}</td>
+                    <td>${{item.item.price}} <a style="color:blue;" href = "remove/{{item.id}}">Remove</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+            <a href = /all_items>Continue Shopping</a></p>
+            <a href = "" class="btn btn-primary">Checkout</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Edit Item</title>
+</head>
+<body>
+    <div class = "container">
+        <div class = "top">
+            <h1>Edit Item</h1>
+        </div>
+        
+        <div class = "edit_item">
+            <p><a href = /logout>Log Out</a></p>
+            <form action = "/item/{{item.id}}/edit/update" method = "POST">
+                {% csrf_token %}
+                {% if messages %}
+                <ul class="messages">    
+                    {% for message in messages %}    
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                <div class="row mb-3">
+                    <label for="item" class="col-sm-1 col-form-label">Item</label>
+                    <div class="col-sm-6">
+                    <input type="text" class="form-control" id="item" name="item" placeholder="{{item.item}}">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="description" class="col-sm-1 col-form-label">Description</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="description" name="description" placeholder="{{item.description}}">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="description" class="col-sm-1 col-form-label">Price</label>
+                    <div class="col-sm-6">
+                        <input type="number" class="form-control" id="price" name="price" placeholder="$ {{item.price}}">
+                    </div>
+                </div>
+                
+                    <p><button type="submit" class="btn btn-primary">Edit</button></p>
+                    <p><a href = "/item/{{item.id}}/delete" class="btn btn-primary">Delete</a></p>
+                    <p><a href = /all_items class="btn btn-primary">Cancel</a></p>
+                    
+            </form>
+        </div>
+    </div>
+</body>
+</html>

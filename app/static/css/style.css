@@ -1,0 +1,150 @@
+*{
+    vertical-align: baseline;
+    font-weight: inherit;
+    font-family: inherit;
+    font-style: inherit;
+    border: 0 none;
+    outline: 0;
+    padding: 0;
+    margin: 0 auto;
+    
+}
+a{
+    color:rgb(64, 197, 197);
+}
+.container{
+    background: url("/static/images/thin-blue-line-pattern.png")50% 0 repeat;
+    opacity:0.8;
+    width: 970px;
+    height: 100%;
+    margin: auto;
+    padding: 15px;
+}
+.top h1{
+    font-family:"Monaco", monospace;
+    text-align: center;
+    background-color:rgb(43, 41, 41);
+    color:white;
+    padding: 10px;
+}
+.store{
+    width:930px;
+    height:100%;
+    display:inline-block;
+    border: 1px solid rgb(255, 255, 255);
+    padding:16px;
+    margin:5px;
+    text-align: center;
+    color: white;
+    
+}
+.store a{
+    text-align:center;
+}
+.item{
+    display:inline-block;
+    border: 1px solid rgb(255, 255, 255);
+    padding:10px;
+    margin:10px;
+    text-align: center;
+}
+.panel{
+    padding: 15px;
+}
+.panel h1{
+    margin: 10px 90px 10px 20px;
+    display:inline-block;
+}
+
+.panel_two p {
+    margin: 10px 0px 10px 775px;
+    
+}
+.panel p{
+    text-align: center;
+    display:inline-block;
+    padding:2px;
+    width:100px;
+    text-transform: capitalize;
+}
+#validations{
+    color:red;
+    padding:10px;
+}
+.registration{
+    color:white;
+}
+.registration button{
+    margin:0px 0px 0px 750px;
+}
+.registration h1{
+    color:white;
+    text-align: center;
+}
+
+.add_item{
+    color:white;
+}
+.add_item a{
+    margin:0px 0px 0px 750px;
+    color:white;
+}
+.add_item button{
+    margin:0px 0px 0px 750px;
+    color:white;
+}
+.edit_account{
+    color:white; 
+}
+.edit_account a{
+    margin:0px 0px 0px 700px;
+    color:white; 
+}
+.edit_account button{
+    margin:0px 0px 0px 700px;
+    color:white; 
+}
+.edit_item{
+    color:white;
+}
+.edit_item a{
+    margin:0px 0px 0px 700px;
+    color:white; 
+}
+.edit_item button{
+    margin:0px 0px 0px 700px;
+    color:white; 
+}
+.cart_items{
+    color:white;
+    padding: 15px;
+    text-align: center;
+}
+.item_panel p{
+    text-align: center;
+    display:inline-block;
+    padding:5px;
+    width:100px;
+    text-transform: capitalize;
+    margin:15px -470px 15px 575px;
+}
+.cart{
+    margin:20px;
+    border: 1px solid white;
+}
+.cart td{
+    color:white;
+    padding:10px;
+    margin:5px;
+    border:.5px solid white;
+}
+.cart th{
+    color:red;
+    padding:20px;
+    margin:5px;
+    border:.5px solid white;
+}
+.cart a{
+    margin:0px 0px 0px 700px;
+    color:white; 
+}

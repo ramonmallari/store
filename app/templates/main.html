@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+    <title>EOS Sales</title>
+</head>
+<body>
+    <div class = "container">
+        <div class = "top">
+            <h1>End of Shift Sales</h1>
+        </div>
+        <div class = "panel">
+            <h1 style="color:blue;">Welcome, {{user.first_name}} {{user.last_name}}</h1>
+            <p><a href = /add_item>Add Item</a></p>
+            <p><a href = "user/{{user.id}}">Edit Account</a></p>
+            <p><a href = "view_cart">View Cart</a></p>
+            <p><a href = /logout>Log Out</a></p>
+        </div>
+
+        <div class = "store">
+            {% for item in all_items %}
+            <div class = "item">
+                <p>-------------------</p>
+                <p>| Image goes here |</p>
+                <p>-------------------</p>
+                <p><a href="item/{{item.id}}">{{item.item}}</a></p>
+                <p>{{item.description}}</p>
+                <p>(Seller: {{item.uploaded_by.first_name}} {{item.uploaded_by.last_name}})</p>
+                <p>${{item.price}}</p>
+                <a href="add_to_cart/{{item.id}}">Add to cart</a>
+                
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</body>
+</html>

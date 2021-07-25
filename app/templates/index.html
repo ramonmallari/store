@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Register and Login</title>
+</head>
+<body>
+    <div class = "container">
+        <div class = "top">
+            <h1>End of Shift Sales</h1>
+        </div>
+        <div id = "box">
+            <div id = "validations">
+                {% if messages %}
+                    <ul class="messages">    
+                        {% for message in messages %}    
+                        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            <div class = "registration">
+                <form action = "/register" method = "POST">
+                    {% csrf_token %}
+                    <h1>Registration</h1>
+                    <div class="row mb-3">
+                        <label for="first_name" class="col-sm-1 col-form-label">First Name</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="first_name" name="first_name">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="last_name" class="col-sm-1 col-form-label">Last Name</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="last_name" name="last_name">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="email" class="col-sm-1 col-form-label">Email</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="email" name="email">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="password" class="col-sm-1 col-form-label">Password</label>
+                        <div class="col-sm-3">
+                            <input type="password" class="form-control" id="password" name="password">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="confirm_pw" class="col-sm-1 col-form-label">Confirm PW</label>
+                        <div class="col-sm-3">
+                            <input type="password" class="form-control" id="confirm_pw" name="confirm_pw">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </form>
+                <form action = "/login" method = "POST">
+                    {% csrf_token %}
+                    <h1>Login</h1>
+                    <div class="row mb-3">
+                        <label for="email" class="col-sm-1 col-form-label">Email</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="email" name="email">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="password" class="col-sm-1 col-form-label">Password</label>
+                        <div class="col-sm-3">
+                            <input type="password" class="form-control" id="Password" name="password">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

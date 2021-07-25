@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Edit Account</title>
+</head>
+<body>
+    <div class = "container">
+        <div class = "top">
+            <h1>Edit Account</h1>
+        </div>
+        <div class = "panel_two">
+            <p><a href = /logout>Log Out</a></p>
+        </div>
+        <div id = "validations">
+            {% if messages %}
+                <ul class="messages">    
+                    {% for message in messages %}    
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+        <div class = "edit_account">
+            <form action = "{{user.id}}/user_edit" method = "POST">
+                {% csrf_token %}
+                <div class="row mb-3">
+                    <label for="email" class="col-sm-1 col-form-label">Email</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="email" name="email" placeholder="{{user.email}}">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="password" class="col-sm-1 col-form-label">Password</label>
+                    <div class="col-sm-3">
+                        <input type="password" class="form-control" id="password" name="password">
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn">Edit</button>
+                <p><a href = /all_items class="btn">Cancel</a></p>
+            </form>
+        </div>
+    </div>
+    
+    
+</body>
+</html>
